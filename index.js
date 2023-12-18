@@ -17,6 +17,8 @@ try {
 	console.log(token);
 	const pr_title = core.getInput('pr_title');
 	console.log(pr_title);
+	const githubcontext = core.getInput('GITHUB_CONTEXT');
+	console.log(githubcontext);
 
 } catch (error) {
 	core.setFailed(error.message);
