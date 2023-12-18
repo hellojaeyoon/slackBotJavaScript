@@ -22,18 +22,22 @@ const webhook = new IncomingWebhook(url);
 		text.href = pullRequestUrl;
 	  	await webhook.send({
 	    	text: "링크 <google.com|hellogoogle>",
-		attachments:[
 		{
-		  fallback:"링크주소: < pullRequestUrl | 구글 >",
-		  pretext:"링크주소: < pullRequestUrl | 구글 >",
-	      	  color:"#00FFFF",
-	          fields:[
-	        	{
-	          	title:"알림",
-	          	value:"해당링크를 클릭하여 검색해 보세요.",
-	          	short:false
-	        	}
-		  ]
+		   "attachments":[
+		      {
+		         "fallback":"New open task [Urgent]: <http://url_to_task|Test out Slack message attachments>",
+		         "pretext":"New open task [Urgent]: <http://url_to_task|Test out Slack message attachments>",
+		         "color":"#D00000",
+		         "fields":[
+		            {
+		               "title":"Notes",
+		               "value":"This is much easier than I thought it would be.",
+		               "short":false
+		            }
+			 ]
+	      		}
+   		   ]
+		}	
 	    }
 	  ]
 	 	 });
