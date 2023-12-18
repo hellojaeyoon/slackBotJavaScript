@@ -1,6 +1,10 @@
 name: "TEST"
 description: "TESTDescription"
 author: "hello"
+inputs:
+  GIT_TOKEN:
+    description: GitHub token used to make API requests
+    required: true
 runs:
   using: "node16"
   main: "./index.js"
