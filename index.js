@@ -21,7 +21,6 @@ const webhook = new IncomingWebhook(url);
 		text.link(pullRequestUrl)
 	  	await webhook.send({
 	    	text: text,
-	    	t
 	 	 });
 	} catch (error) {
 		core.setFailed(error.message);
