@@ -87,7 +87,8 @@ var attachments = [];
 			  "text": {
 				"type": "mrkdwn",
 				"text": headToBaseContext + "\n" + timeContext
-			};
+			  };
+		    };
 		    attachments.push(slackMessage);
 		}
 		const pr_title = core.getInput('pr_title');
