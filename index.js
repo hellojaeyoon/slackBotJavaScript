@@ -17,8 +17,8 @@ const webhook = new IncomingWebhook(url);
 		console.log(githubcontext);
 		const pullRequestUrl = core.getInput('GITHUB_PR_URL');
 		console.log(pullRequestUrl);
-		const text = "prmessage";
-		text.link(pullRequestUrl)
+		const text = pr_title;
+		text.href = pullRequestUrl;
 	  	await webhook.send({
 	    	text: text,
 	 	 });
