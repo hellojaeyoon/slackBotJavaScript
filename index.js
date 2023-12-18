@@ -21,11 +21,11 @@ const webhook = new IncomingWebhook(url);
 		const text = pullRequestUrl;
 		text.href = pullRequestUrl;
 	  	await webhook.send({
-	    	text: "링크 <google.com|hellogoogle>",
+	    	text: pr_title,
 	        attachments:[
 		      {
-			 "fallback":"New open task [Urgent]: <http://url_to_task|Test out Slack message attachments>",
-			 "pretext":"New open task [Urgent]: <http://url_to_task|Test out Slack message attachments>",
+			 "fallback":"PR을 확인해주세요~: <${pullRequestUrl}|${pr_title}>",
+			 "pretext":"PR을 확인해주세요~: <${pullRequestUrl}|${pr_title}>",
 			 "color":"#D00000",
 			 "fields":[
 			    {
