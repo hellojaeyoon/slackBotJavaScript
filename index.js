@@ -51,7 +51,7 @@ const NOTI_COLORS = {
 		  });
 		};
 
-		const listOfPRs = getPRList();
+		const { listOfPRs : pullRequest } = getPRList();
 		console.log(listOfPRs);
 		
 		const pr_title = core.getInput('pr_title');
