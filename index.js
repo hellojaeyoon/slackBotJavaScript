@@ -18,14 +18,13 @@ const webhook = new IncomingWebhook(url);
 		const pullRequestUrl = core.getInput('GITHUB_PR_URL');
 		console.log(pullRequestUrl);
 		console.log(pullRequestUrl.type);
-		const text = pullRequestUrl;
-		text.href = pullRequestUrl;
+		const textExample = `${pullRequestUrl}`;
 	  	await webhook.send({
 	    	text: pr_title,
 	        attachments:[
 		      {
-			 "fallback":"PR을 확인해주세요~: <${pullRequestUrl}|${pr_title}>",
-			 "pretext":"PR을 확인해주세요~: <${pullRequestUrl}|${pr_title}>",
+			 "fallback":"PR을 확인해주세요~: <textExample|praddress>",
+			 "pretext":"PR을 확인해주세요~: <textExample|praddress>",
 			 "color":"#D00000",
 			 "fields":[
 			    {
