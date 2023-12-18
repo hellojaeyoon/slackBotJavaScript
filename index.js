@@ -16,9 +16,13 @@ const NOTI_COLORS = {
 };
 
 class PullRequest {
-  constructor(name, url) {
+  constructor(name, url, head, base, created_at, updated_at) {
     this.name = name;
     this.url = url;
+    this.head = url;
+    this.base = url;
+    this.created_at = url;
+    this.updated_at = url;
   }
 }
 
@@ -44,7 +48,7 @@ var attachments = [];
 		    const { data } = await request({ ...params, per_page: 100, page });
 		    for (var i = 0; i < data.length; i++) {
 			  var object = data[i];
-			  const pullRequest = new PullRequest(object.title, object.html_url); 
+			  const pullRequest = new PullRequest(object.title, object.html_url, object.head.label, object.base.label, object.created_at, object.updated_at); 
 			  result.push(pullRequest);
 		    }
 		    console.log(`data`);
@@ -65,6 +69,7 @@ var attachments = [];
 
 		console.log(`listOfPRs`);
 		console.log(listOfPRs);
+		console.log(Date());
 
 		for (var i = 0; i < listOfPRs.length; i++) {
 		    const pr = listOfPRs[i];
@@ -72,11 +77,14 @@ var attachments = [];
 		    console.log(dueDate);
 		    const color = NOTI_COLORS[`${dueDate}`];
   		    console.log(color);
+		    const headToBaseContext = `${pr.head}` + "to" + `${pr.base}`
+		    const timeContext = `${pr.created_at}` + "to" + `${pr.updated_at}`
 		    const slackMessage = {"fallback": "요청에 실패했습니다",
 		          "color": color,
 		          "pretext": "PR이 당신의 리뷰를 기다리고 있어요!",
 		          "title": pr.name,
-		          "title_link": pr.url};
+		          "title_link": pr.url},
+			  "text": headToBaseContext + "\n" + timeContext};
 		    attachments.push(slackMessage);
 		}
 		const pr_title = core.getInput('pr_title');
