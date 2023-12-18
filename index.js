@@ -23,8 +23,8 @@ const webhook = new IncomingWebhook(url);
 	    	text: textExample,
 	        attachments:[
 		      {
-			 "fallback":"PR을 확인해주세요~: <https://github.com/hellojaeyoon/javascriptAction/pull/14|PR>",
-			 "pretext":"PR을 확인해주세요~: <https://github.com/hellojaeyoon/javascriptAction/pull/14|PR>",
+			 "fallback":"PR을 확인해주세요~: <`${pullRequestUrl}`|PR>",
+			 "pretext":"PR을 확인해주세요~: <`${pullRequestUrl}`|PR>",
 			 "color":"#D00000",
 			 "fields":[
 			    {
