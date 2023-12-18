@@ -19,7 +19,7 @@ try {
 	console.log(pr_title);
 	const githubcontext = core.getInput('GITHUB_CONTEXT');
 	console.log(githubcontext);
-	const pullRequestUrl = githubcontext["event"]["pull_request"]["html_url"];
+	const pullRequestUrl = githubcontext.event.pull_request.html_url;
 	console.log(pullRequestUrl);
 
 } catch (error) {
