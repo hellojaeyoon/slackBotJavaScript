@@ -84,7 +84,7 @@ var attachments = [];
 		          "color": color,
 		          "title": pr.name,
 		          "title_link": pr.url,
-			  "text": ```${headToBaseContext}\n${timeContext}```
+			  "text": headToBaseContext + "\n" + timeContext
 		    };
 		    attachments.push(slackMessage);
 		}
