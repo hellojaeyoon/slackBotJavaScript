@@ -11,7 +11,9 @@ inputs:
   WEBHOOK_URL:
     description: Webhookurl
     required: true
-
+  GITHUB_CONTEXT:
+    description: GITHUB_CONTEXT
+    required: true
 runs:
   using: "node16"
   main: "./index.js"
