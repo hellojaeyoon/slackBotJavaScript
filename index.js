@@ -24,8 +24,8 @@ const webhook = new IncomingWebhook(url);
 	    	text: text,
 		attachments:[
 		{
-		  fallback:"링크주소: <pullRequestUrl|구글>",
-		  pretext:"링크주소: <pullRequestUrl|구글>",
+		  fallback:"링크주소: < pullRequestUrl | 구글 >",
+		  pretext:"링크주소: < pullRequestUrl | 구글 >",
 	      	  color:"#00FFFF",
 	          fields:[
 	        	{
