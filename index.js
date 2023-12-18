@@ -18,7 +18,7 @@ const NOTI_COLORS = {
 class PullRequest {
   constructor(name, url) {
     this.name = name;
-    this.year = year;
+    this.url = url;
   }
 }
 // Send the notification
