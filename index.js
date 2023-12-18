@@ -83,7 +83,7 @@ var attachments = [];
 		          "color": color,
 		          "pretext": "PR이 당신의 리뷰를 기다리고 있어요!",
 		          "title": pr.name,
-		          "title_link": pr.url},
+		          "title_link": pr.url,
 			  "text": headToBaseContext + "\n" + timeContext};
 		    attachments.push(slackMessage);
 		}
