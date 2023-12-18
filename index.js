@@ -38,7 +38,7 @@ const NOTI_COLORS = {
 		    result.push(...data);
 		
 		    [page, len, count] = [page + 1, data.length, count + data.length];
-		  } while (len === MAX_PER_PAGE && count < maxCount);
+		  } while (len === 100 && count < maxCount);
 		
 		  return result.slice(0, maxCount);
 		};
