@@ -18,9 +18,22 @@ const webhook = new IncomingWebhook(url);
 		const pullRequestUrl = core.getInput('GITHUB_PR_URL');
 		console.log(pullRequestUrl);
 		const text = pr_title;
-		text.href = pullRequestUrl;
 	  	await webhook.send({
 	    	text: text,
+		attachments:[
+		{
+		  fallback:"링크주소: <pullRequestUrl|구글>",
+		  pretext:"링크주소: <pullRequestUrl|구글>",
+	      	  color:"#00FFFF",
+	          fields:[
+	        	{
+	          	title:"알림",
+	          	value:"해당링크를 클릭하여 검색해 보세요.",
+	          	short:false
+	        	}
+		  ]
+	    }
+	  ]
 	 	 });
 	} catch (error) {
 		core.setFailed(error.message);
