@@ -17,4 +17,4 @@ jobs:
       - name: Run jsfile
         uses: ./
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
