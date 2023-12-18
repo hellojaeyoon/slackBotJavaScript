@@ -21,7 +21,6 @@ const NOTI_COLORS = {
 	try {
 		const token = core.getInput('GIT_TOKEN');
 		core.setOutput('token', token);
-		console.log(token);
 		const octokit = github.getOctokit(token);
 		global.octokit = octokit;
 		const fetchAllPages = async (
@@ -34,7 +33,8 @@ const NOTI_COLORS = {
 		
 		  do {
 		    const { data } = await request({ ...params, per_page: 100, page });
-		
+		    console.log(`data`);
+		    console.log(data);
 		    result.push(...data);
 		
 		    [page, len, count] = [page + 1, data.length, count + data.length];
@@ -52,6 +52,7 @@ const NOTI_COLORS = {
 		};
 
 		const { listOfPRs } = getPRList();
+		console.log(`listOfPRs`);
 		console.log(listOfPRs);
 		
 		const pr_title = core.getInput('pr_title');
@@ -62,7 +63,6 @@ const NOTI_COLORS = {
 		console.log(open_issues_count);
 		const pullRequestUrl = core.getInput('GITHUB_PR_URL');
 		console.log(pullRequestUrl);
-		console.log(pullRequestUrl.type);
 		const textExample = `${pullRequestUrl}`;
 
 		const dueDate = pr_title.substr(0, 5);
