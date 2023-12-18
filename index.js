@@ -87,7 +87,7 @@ var attachments = [];
 			  "text": {
 				"type": "mrkdwn",
 				"text": headToBaseContext + "\n" + timeContext
-			  };
+			  }
 		    };
 		    attachments.push(slackMessage);
 		}
