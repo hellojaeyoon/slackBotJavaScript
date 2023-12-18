@@ -61,7 +61,11 @@ class PullRequest {
 		  });
 		};
 
-		const { listOfPRs } = getPRList();
+		const listOfPRs = fetchAllPages(global.octokit.rest.pulls.list, {
+		    owner: github.context.repo.owner,
+		    repo: github.context.repo.repo,
+		    state: "open",
+		  });
 		console.log(`listOfPRs`);
 		console.log(listOfPRs);
 		
