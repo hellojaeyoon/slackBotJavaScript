@@ -19,10 +19,10 @@ class PullRequest {
   constructor(name, url, head, base, created_at, updated_at) {
     this.name = name;
     this.url = url;
-    this.head = url;
-    this.base = url;
-    this.created_at = url;
-    this.updated_at = url;
+    this.head = head;
+    this.base = base;
+    this.created_at = created_at;
+    this.updated_at = updated_at;
   }
 }
 
@@ -81,7 +81,6 @@ var attachments = [];
 		    const timeContext = `${pr.created_at}` + "to" + `${pr.updated_at}`
 		    const slackMessage = {"fallback": "요청에 실패했습니다",
 		          "color": color,
-		          "pretext": "PR이 당신의 리뷰를 기다리고 있어요!",
 		          "title": pr.name,
 		          "title_link": pr.url,
 			  "text": headToBaseContext + "\n" + timeContext};
