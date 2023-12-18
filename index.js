@@ -15,6 +15,12 @@ const NOTI_COLORS = {
 	"[D-5]" : "#008000",
 };
 
+class PullRequest {
+  constructor(name, url) {
+    this.name = name;
+    this.year = year;
+  }
+}
 // Send the notification
 (async () => {
 
@@ -33,14 +39,18 @@ const NOTI_COLORS = {
 		
 		  do {
 		    const { data } = await request({ ...params, per_page: 100, page });
+		    for (var i = 0; i < data.length; i++) {
+			  var object = data[i];
+			  const pullRequest = PullRequest(object.title, object.html_url); 
+			  result.push(pullRequest);
+		    }
 		    console.log(`data`);
 		    console.log(data);
-		    result.push(...data);
 		
 		    [page, len, count] = [page + 1, data.length, count + data.length];
 		  } while (len === 100 && count < maxCount);
-		
-		  return result.slice(0, maxCount);
+		  console.log(result)
+		  return result;
 		};
 		
 		const getPRList = async () => {
