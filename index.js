@@ -13,19 +13,16 @@ const webhook = new IncomingWebhook(url);
 		console.log(token);
 		const pr_title = core.getInput('pr_title');
 		console.log(pr_title);
-		var githubcontext = core.getInput('GITHUB_CONTEXT');
+		const githubcontext = core.getInput('GITHUB_CONTEXT');
 		console.log(githubcontext);
-		var testContext = githubcontext.event;
-		console.log(testContext);
-		testContext = `${ githubcontext.event }`;
-		console.log(testContext);
-		
+		const open_issues_count = core.getInput('OPEN_ISSUES_COUNT');
+		console.log(open_issues_count);
 		const pullRequestUrl = core.getInput('GITHUB_PR_URL');
 		console.log(pullRequestUrl);
 		console.log(pullRequestUrl.type);
 		const textExample = `${pullRequestUrl}`;
 	  	await webhook.send({
-	    	text: pr_title,
+	    	text: `${open_issues_count}개의 PR이 여러분들의 관심을 기다리고 있어요~`,
 	        attachments:[
 		      {
 		          "fallback": "요청에 실패했습니다ㅜ",
