@@ -65,8 +65,8 @@ class PullRequest {
 		    owner: github.context.repo.owner,
 		    repo: github.context.repo.repo,
 		    state: "open",
-		  });
-		);
+		  }));
+
 		console.log(`listOfPRs`);
 		console.log(listOfPRs);
 		
