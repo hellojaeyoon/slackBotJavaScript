@@ -11,7 +11,7 @@ const NOTI_COLORS = {
 	"[D-3]" : "#FFA500",
 	"[D-4]" : "#008000",
 	"[D-5]" : "#008000",
-}
+};
 
 // Send the notification
 (async () => {
