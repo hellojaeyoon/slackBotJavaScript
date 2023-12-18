@@ -1,5 +1,6 @@
-export const test = {
-	console.log(`hellokj`);	
-};
-
-test();
+const main = async () => {
+	try {
+		const token = core.getInput('repo-token', { required: true });
+	}
+	console.log(token);	
+}
