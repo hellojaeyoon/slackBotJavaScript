@@ -1,7 +1,6 @@
 name: "TEST"
 description: "TESTDescription"
 author: "hello"
-inputs:
 runs:
   using: "node16"
   main: "./index.js"
