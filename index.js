@@ -68,14 +68,14 @@ var attachments = [];
 
 		for (var i = 0; i < listOfPRs.length; i++) {
 		    const pr = listOfPRs[i];
-		    const dueDate = pr.title.substr(0, 5);
+		    const dueDate = pr.name.substr(0, 5);
 		    console.log(dueDate);
 		    const color = NOTI_COLORS[`${dueDate}`];
   		    console.log(color);
 		    const slackMessage = {"fallback": "요청에 실패했습니다",
 		          "color": color,
 		          "pretext": "PR이 당신의 리뷰를 기다리고 있어요!",
-		          "title": pr.title,
+		          "title": pr.name,
 		          "title_link": pr.url};
 		    attachments.push(slackMessage);
 		}
