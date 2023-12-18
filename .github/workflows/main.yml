@@ -19,3 +19,4 @@ jobs:
         with:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           pr_title: ${{ github.event.pull_request.title }}
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
