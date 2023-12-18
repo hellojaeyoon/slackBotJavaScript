@@ -132,8 +132,8 @@ var attachments = [];
 		          "title": pr.name,
 		          "title_link": pr.url,
 			  "text": {
-				  type: "mrkdwn",
-            			  text: headToBaseContext + "\n" + timeContext
+				  "type": "mrkdwn",
+            			  "text": headToBaseContext + "\n" + timeContext
 			  }	  
 		    };
 		    attachments.push(slackMessage);
