@@ -14,7 +14,7 @@ const webhook = new IncomingWebhook(url);
 		const pr_title = core.getInput('pr_title');
 		console.log(pr_title);
 		const githubcontext = core.getInput('GITHUB_CONTEXT');
-		console.log(githubcontext);
+		console.log(githubcontext.event);
 		const pullRequestUrl = core.getInput('GITHUB_PR_URL');
 		console.log(pullRequestUrl);
 		console.log(pullRequestUrl.type);
@@ -26,9 +26,8 @@ const webhook = new IncomingWebhook(url);
 		          "fallback": "요청에 실패했습니다ㅜ",
 		          "color": "#2eb886",
 		          "pretext": "PR이 당신의 리뷰를 기다리고 있어요!",
-		          "author_name": "roseline",
-		          "author_link": "https://github.com/roseline124",
-		          "author_icon": "https://avatars.githubusercontent.com/u/41788121?s=460&u=ee6a6f6499aa68a23947cfb76d5e9cb6eebfd29c&v=4",
+		          "author_name": "hellojaeyoon",
+		          "author_link": "https://github.com/hellojaeyoon",
 		          "title": pr_title,
 		          "title_link": textExample,
 		          "text": "피알내용조금?",
