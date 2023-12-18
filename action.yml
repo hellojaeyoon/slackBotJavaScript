@@ -14,6 +14,9 @@ inputs:
   GITHUB_CONTEXT:
     description: GITHUB_CONTEXT
     required: true
+  OPEN_ISSUES_COUNT:
+    description: OPEN_ISSUES_COUNT
+    required: true
   GITHUB_PR_URL:
     description: GITHUB_PR_URL
     required: false
