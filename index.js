@@ -23,8 +23,8 @@ const webhook = new IncomingWebhook(url);
 	    	text: pr_title,
 	        attachments:[
 		      {
-			 "fallback":"PR을 확인해주세요~: <textExample|praddress>",
-			 "pretext":"PR을 확인해주세요~: <textExample|praddress>",
+			 "fallback":"PR을 확인해주세요~: <`${pullRequestUrl}`|praddress>",
+			 "pretext":"PR을 확인해주세요~: <`${pullRequestUrl}`|praddress>",
 			 "color":"#D00000",
 			 "fields":[
 			    {
