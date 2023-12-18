@@ -20,4 +20,5 @@ jobs:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           pr_title: ${{ github.event.pull_request.title }}
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-          GITHUB_CONTEXT: ${{ github }}
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+          GITHUB_PR_URL: ${{ github.event.pull_request.html_url }}
