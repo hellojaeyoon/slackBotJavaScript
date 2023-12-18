@@ -77,8 +77,8 @@ var attachments = [];
 		    console.log(dueDate);
 		    const color = NOTI_COLORS[`${dueDate}`];
   		    console.log(color);
-		    const headToBaseContext = "````${pr.head}` + " > " + `${pr.base}````"
-		    const timeContext = `${pr.created_at}` + "to" + `${pr.updated_at}`
+		    const headToBaseContext = "````${pr.head}` + " > " + `${pr.base}````";
+		    const timeContext = `${pr.created_at}` + "to" + `${pr.updated_at}`;
 		    const slackMessage = {
 			  "fallback": "요청에 실패했습니다",
 		          "color": color,
