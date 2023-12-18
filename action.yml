@@ -5,6 +5,9 @@ inputs:
   GIT_TOKEN:
     description: GitHub token used to make API requests
     required: true
+  pr_title:
+    description: pr_title token used to send to Slack
+    required: false
 runs:
   using: "node16"
   main: "./index.js"
