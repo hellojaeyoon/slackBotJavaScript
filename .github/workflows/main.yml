@@ -1,7 +1,7 @@
 name: TestJavaScript
 
 on:
-  push:
+  pull_request:
 
 jobs:
   first-job:
@@ -18,3 +18,4 @@ jobs:
         uses: ./
         with:
           GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: ${{ github.event.pull_request.title }}
