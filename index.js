@@ -21,6 +21,9 @@ class PullRequest {
     this.url = url;
   }
 }
+
+var attachments = [];
+
 // Send the notification
 (async () => {
 
@@ -62,7 +65,20 @@ class PullRequest {
 
 		console.log(`listOfPRs`);
 		console.log(listOfPRs);
-		
+
+		for (var i = 0; i < listOfPRs.length; i++) {
+		    const pr = listOfPRs[i];
+		    const dueDate = pr.title.substr(0, 5);
+		    console.log(dueDate);
+		    const color = NOTI_COLORS[`${dueDate}`];
+  		    console.log(color);
+		    const slackMessage = {"fallback": "요청에 실패했습니다",
+		          "color": color,
+		          "pretext": "PR이 당신의 리뷰를 기다리고 있어요!",
+		          "title": pr.title,
+		          "title_link": pr.url};
+		    attachments.push(slackMessage);
+		}
 		const pr_title = core.getInput('pr_title');
 		console.log(pr_title);
 		const githubcontext = core.getInput('GITHUB_CONTEXT');
@@ -72,33 +88,10 @@ class PullRequest {
 		const pullRequestUrl = core.getInput('GITHUB_PR_URL');
 		console.log(pullRequestUrl);
 		const textExample = `${pullRequestUrl}`;
-
-		const dueDate = pr_title.substr(0, 5);
-		console.log(dueDate);
-		const color = NOTI_COLORS[`${dueDate}`];
-  		console.log(color);
-		
+			
 	  	await webhook.send({
 	    	text: `${open_issues_count}개의 PR이 여러분들의 관심을 기다리고 있어요~`,
-	        attachments:[
-		      {
-		          "fallback": "요청에 실패했습니다ㅜ",
-		          "color": color,
-		          "pretext": "PR이 당신의 리뷰를 기다리고 있어요!",
-		          "author_name": "hellojaeyoon",
-		          "author_link": "https://github.com/hellojaeyoon",
-		          "title": pr_title,
-		          "title_link": textExample,
-		          "text": "피알내용조금?",
-		          "fields": [
-		              {
-		                  "title": "썸띵",
-		                  "value": "썸밸류",
-		                  "short": false
-		              }
-		          ]
-		      }
-		   ]
+	        attachments: attachments
 	 	});
 	} catch (error) {
 		core.setFailed(error.message);
