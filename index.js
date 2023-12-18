@@ -17,7 +17,9 @@ const webhook = new IncomingWebhook(url);
 		console.log(githubcontext);
 		const pullRequestUrl = core.getInput('GITHUB_PR_URL');
 		console.log(pullRequestUrl);
+		console.log(pullRequestUrl.type);
 		const text = pr_title;
+		text.href = pullRequestUrl;
 	  	await webhook.send({
 	    	text: text,
 		attachments:[
