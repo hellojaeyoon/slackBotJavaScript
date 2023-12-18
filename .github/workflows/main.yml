@@ -13,3 +13,6 @@ jobs:
       
       - name: Run Test
         run: echo hello
+
+      - name: Run jsfile
+        uses: ./
