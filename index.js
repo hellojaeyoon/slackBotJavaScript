@@ -38,7 +38,7 @@ class PullRequest {
 		  const result = [];
 		
 		  do {
-		    const { data } = await request({ ...params, per_page: 100, page });
+		    const { data } = await Promise.all(request({ ...params, per_page: 100, page }));
 		    for (var i = 0; i < data.length; i++) {
 			  var object = data[i];
 			  const pullRequest = new PullRequest(object.title, object.html_url); 
@@ -52,20 +52,12 @@ class PullRequest {
 		  console.log(result)
 		  return result;
 		};
-		
-		const getPRList = async () => {
-		  return fetchAllPages(global.octokit.rest.pulls.list, {
+
+		const listOfPRs = await fetchAllPages(global.octokit.rest.pulls.list, {
 		    owner: github.context.repo.owner,
 		    repo: github.context.repo.repo,
 		    state: "open",
 		  });
-		};
-
-		const listOfPRs = await Promise.all(fetchAllPages(global.octokit.rest.pulls.list, {
-		    owner: github.context.repo.owner,
-		    repo: github.context.repo.repo,
-		    state: "open",
-		  }));
 
 		console.log(`listOfPRs`);
 		console.log(listOfPRs);
