@@ -1,8 +1,10 @@
 const core = require('@actions/core');
+import * as github from "@actions/github";
 const { IncomingWebhook } = require('@slack/webhook');
 
 const url = core.getInput('WEBHOOK_URL');
 const webhook = new IncomingWebhook(url);
+
 
 const NOTI_COLORS = {
 	"[D-0]" : "#FF0000",
@@ -20,6 +22,20 @@ const NOTI_COLORS = {
 		const token = core.getInput('GIT_TOKEN');
 		core.setOutput('token', token);
 		console.log(token);
+		const octokit = github.getOctokit(token);
+		global.octokit = octokit;
+
+		const getPRList = async () => {
+		  return fetchAllPages(global.octokit.rest.pulls.list, {
+		    owner: github.context.repo.owner,
+		    repo: github.context.repo.repo,
+		    state: "open",
+		  });
+		};
+
+		const listOfPRs = getPRList();
+		console.log(listOfPRs);
+		
 		const pr_title = core.getInput('pr_title');
 		console.log(pr_title);
 		const githubcontext = core.getInput('GITHUB_CONTEXT');
