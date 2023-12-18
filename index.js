@@ -33,7 +33,7 @@ const NOTI_COLORS = {
 		  const result = [];
 		
 		  do {
-		    const { data } = await request({ ...params, per_page: MAX_PER_PAGE, page });
+		    const { data } = await request({ ...params, per_page: 100, page });
 		
 		    result.push(...data);
 		
