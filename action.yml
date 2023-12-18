@@ -8,6 +8,10 @@ inputs:
   pr_title:
     description: pr_title token used to send to Slack
     required: false
+  WEBHOOK_URL:
+    description: Webhookurl
+    required: true
+
 runs:
   using: "node16"
   main: "./index.js"
