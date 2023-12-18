@@ -46,7 +46,7 @@ const NOTI_COLORS = {
 		const getPRList = async () => {
 		  return fetchAllPages(global.octokit.rest.pulls.list, {
 		    owner: github.context.repo.owner,
-		    repo: github.context.repo.repo,
+		    repo: github.context.repo,
 		    state: "open",
 		  });
 		};
