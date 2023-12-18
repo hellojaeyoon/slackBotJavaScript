@@ -14,7 +14,7 @@ const webhook = new IncomingWebhook(url);
 		const pr_title = core.getInput('pr_title');
 		console.log(pr_title);
 		const githubcontext = core.getInput('GITHUB_CONTEXT');
-		console.log(githubcontext.event);
+		console.log(githubcontext);
 		const pullRequestUrl = core.getInput('GITHUB_PR_URL');
 		console.log(pullRequestUrl);
 		console.log(pullRequestUrl.type);
