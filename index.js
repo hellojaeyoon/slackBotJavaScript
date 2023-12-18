@@ -131,12 +131,20 @@ var attachments = [];
 		          "color": color,
 		          "title": pr.name,
 		          "title_link": pr.url,
-			  "text": {
-				  "type": "mrkdwn",
-            			  "text": headToBaseContext + "\n" + timeContext
-			  }	  
+			  "text": headToBaseContext + "\n" + timeContext  
 		    };
 		    attachments.push(slackMessage);
+		    const slackBlock = {
+			    blocks : [
+				    {
+			          type: "section",
+			          text: {
+			            type: "mrkdwn",
+			            text: headToBaseContext,
+			          },
+			        },
+				    ]
+		    }
 		}
 		const pr_title = core.getInput('pr_title');
 		console.log(pr_title);
