@@ -20,7 +20,7 @@ const webhook = new IncomingWebhook(url);
 		console.log(pullRequestUrl.type);
 		const textExample = `${pullRequestUrl}`;
 	  	await webhook.send({
-	    	text: pr_title,
+	    	text: textExample,
 	        attachments:[
 		      {
 			 "fallback":"PR을 확인해주세요~: <https://github.com/hellojaeyoon/javascriptAction/pull/14|PR>",
