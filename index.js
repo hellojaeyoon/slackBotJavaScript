@@ -125,7 +125,7 @@ var attachments = [];
 			const timewhenUpdate = time_ago(new Date(pr.updated_at));
 			console.log(timewhenCreate);
 			console.log(timewhenCreate);
-		    const timeContext = "created " + timewhenCreate + ", and " + "updated " + timewhenUpdate;
+		    const timeContext = "(" + "created " + timewhenCreate + ", and " + "updated " + timewhenUpdate + ")";
 		    const slackMessage = {
 			  "fallback": "요청에 실패했습니다",
 		          "color": color,
