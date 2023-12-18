@@ -1,5 +1,5 @@
 const core = require('@actions/core');
-import * as github from "@actions/github";
+const github = require('@actions/github');
 const { IncomingWebhook } = require('@slack/webhook');
 
 const url = core.getInput('WEBHOOK_URL');
