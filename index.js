@@ -17,18 +17,6 @@ const NOTI_COLORS = {
 
 function time_ago(time) {
 
-  switch (typeof time) {
-    case 'number':
-      break;
-    case 'string':
-      time = +new Date(time);
-      break;
-    case 'object':
-      if (time.constructor === Date) time = time.getTime();
-      break;
-    default:
-      time = +new Date();
-  }
   var time_formats = [
     [60, 'seconds', 1], // 60
     [120, '1 minute ago', '1 minute from now'], // 60*2
