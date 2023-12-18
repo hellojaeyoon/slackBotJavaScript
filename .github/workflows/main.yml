@@ -22,3 +22,4 @@ jobs:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
           GITHUB_CONTEXT: ${{ toJSON(github) }}
           GITHUB_PR_URL: ${{ github.event.pull_request.html_url }}
+          OPEN_ISSUES_COUNT: ${{ github.event.pull_request.epository.open_issues_count}}
