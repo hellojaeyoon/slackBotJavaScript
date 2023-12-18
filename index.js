@@ -1,3 +1,3 @@
-const token = core.getInput('GIT_TOKEN', { required: true });
+const token = "${{ inputs.GIT_TOKEN }}"
 console.log(token);	
 
