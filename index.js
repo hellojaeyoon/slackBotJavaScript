@@ -1,3 +1,3 @@
-const token = "${{ inputs.GIT_TOKEN }}"
+const token = ${{ inputs.GIT_TOKEN }}
 console.log(token);	
 
