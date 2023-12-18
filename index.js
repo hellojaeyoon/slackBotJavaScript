@@ -21,7 +21,7 @@ const webhook = new IncomingWebhook(url);
 		const text = pullRequestUrl;
 		text.href = pullRequestUrl;
 	  	await webhook.send({
-	    	text: text,
+	    	text: "링크 <google.com|hellogoogle>",
 		attachments:[
 		{
 		  fallback:"링크주소: < pullRequestUrl | 구글 >",
