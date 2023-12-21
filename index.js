@@ -145,6 +145,7 @@ var attachments = [];
 			        },
 				    ]
 		    }
+		    attachments.push(slackBlock);
 		}
 		const pr_title = core.getInput('pr_title');
 		console.log(pr_title);
