@@ -91,7 +91,7 @@ var attachments = [];
 		    const { data } = await request({ ...params, per_page: 100, page });
 		    for (var i = 0; i < data.length; i++) {
 			  var object = data[i];
-			  const pullRequest = new PullRequest(object.title, object.html_url, object.head.label, object.base.label, object.created_at, object.updated_at); 
+			  const pullRequest = new PullRequest(object.title, object.html_url, object.head.ref, object.base.ref, object.created_at, object.updated_at); 
 			  result.push(pullRequest);
 		    }
 		    console.log(`data`);
