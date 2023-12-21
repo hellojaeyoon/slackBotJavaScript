@@ -140,7 +140,7 @@ var attachments = [];
 					"type": "section",
 						"text": {
 							"type": "mrkdwn",
-							"text": pr.name + "<https://google.com|this is a link>"
+							"text": "<" + pr.url + "|" + pr.name + ">"
 						}
 					},
 				    	{
