@@ -136,6 +136,20 @@ var attachments = [];
 		    attachments.push(slackMessage);
 		    const slackBlock = {
 			    blocks : [
+					{
+				          type: "section",
+				          text: {
+				            type: "mrkdwn",
+				            text: "<@" + "C069ZBB35L4" + ">" + "여러분",
+				          },
+				        },
+				    	{
+				          type: "section",
+				          text: {
+				            type: "mrkdwn",
+				            text: "<@" + "U05DYM3MNSU" + ">" + "님",
+				          },
+				        },
 				    	{
 					"type": "section",
 						"text": {
