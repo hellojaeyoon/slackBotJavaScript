@@ -136,13 +136,20 @@ var attachments = [];
 		    attachments.push(slackMessage);
 		    const slackBlock = {
 			    blocks : [
-				    {
-			          type: "section",
-			          text: {
-			            type: "mrkdwn",
-			            text: headToBaseContext,
-			          },
-			        },
+				    	{
+					"type": "section",
+						"text": {
+							"type": "mrkdwn",
+							"text": pr.name + "<https://google.com|this is a link>"
+						}
+					},
+				    	{
+				          type: "section",
+				          text: {
+				            type: "mrkdwn",
+				            text: headToBaseContext,
+				          },
+				        },
 				    ]
 		    }
 		    attachments.push(slackBlock);
