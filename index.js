@@ -3,8 +3,6 @@ import * as github from "@actions/github";
 import { initialize } from "./initialize.js";
 import { listOfPRs } from "./api.js";
 
-initialize();
-
 const NOTI_COLORS = {
 	"[D-0]" : "#FF0000",
 	"[D-1]" : "#FF0000",
@@ -74,6 +72,7 @@ var attachments = [];
 (async () => {
 
 	try {
+		initialize();
 		console.log(`listOfPRs`);
 		console.log(listOfPRs);
 		console.log(Date());
