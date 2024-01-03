@@ -73,10 +73,7 @@ var attachments = [];
 (async () => {
 
 	try {
-		const token = core.getInput('GIT_TOKEN');
-		core.setOutput('token', token);
-		const octokit = github.getOctokit(token);
-		global.octokit = octokit;
+
 		const fetchAllPages = async (
 		  request,
 		  params,
