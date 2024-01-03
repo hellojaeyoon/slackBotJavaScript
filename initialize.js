@@ -1,6 +1,6 @@
 import * as core from "@actions/core";
 import * as github from "@actions/github";
-import IncomingWebhook from "@slack/webhook";
+import { IncomingWebhook } from "@slack/webhook";
 
 export const initialize = () => {
   global.owner = github.context.repo.owner;
