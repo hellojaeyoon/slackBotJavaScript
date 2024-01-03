@@ -1,6 +1,6 @@
 import * as core from "@actions/core";
 import * as github from "@actions/github";
-import * as IncomingWebhook from "@slack/webhook";
+import IncomingWebhook from "@slack/webhook";
 
 export const initialize = () => {
   global.owner = github.context.repo.owner;
@@ -14,7 +14,7 @@ export const initialize = () => {
   global.octokit = octokit;
   
   const url = core.getInput('WEBHOOK_URL');
-  const webhook = new IncomingWebhook(url);
+  const webhook = IncomingWebhook(url);
   global.webhook = webhook;
 
   console.log(`Successfully initialized.`);
