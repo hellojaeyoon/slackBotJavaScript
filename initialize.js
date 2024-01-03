@@ -14,7 +14,7 @@ export const initialize = () => {
   global.octokit = octokit;
   
   const url = core.getInput('WEBHOOK_URL');
-  const webhook = new incomingWebhook(url);
+  const webhook = incomingWebhook(url);
   global.webhook = webhook;
 
   console.log(`Successfully initialized.`);
