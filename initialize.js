@@ -6,9 +6,9 @@ export const initialize = () => {
   global.owner = github.context.repo.owner;
   global.repo = github.context.repo.repo;
 
-  const githubToken = core.getInput("GH_TOKEN", { required: true });
+  const githubToken = core.getInput("GIT_TOKEN", { required: true });
   if (!githubToken) {
-    throw new Error("Missing GH_TOKEN environment variable");
+    throw new Error("Missing GIT_TOKEN environment variable");
   }
   const octokit = github.getOctokit(githubToken);
   global.octokit = octokit;
