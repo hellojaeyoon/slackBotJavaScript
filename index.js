@@ -1,7 +1,7 @@
 import * as core from "@actions/core";
 import * as github from "@actions/github";
 import { initialize } from "./initialize.js";
-import listOfPRs from "./api.js";
+import { listOfPRs } from "./api.js";
 
 initialize();
 
