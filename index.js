@@ -1,10 +1,8 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const { IncomingWebhook } = require('@slack/webhook');
+import { initialize } from "./initialize.js";
 
-const url = core.getInput('WEBHOOK_URL');
-const webhook = new IncomingWebhook(url);
-
+initialize();
 
 const NOTI_COLORS = {
 	"[D-0]" : "#FF0000",
@@ -178,7 +176,7 @@ var attachments = [];
 		console.log(pullRequestUrl);
 		const textExample = `${pullRequestUrl}`;
 			
-	  	await webhook.send({
+	  	await global.webhook.send({
 	    	text: `${open_issues_count}개의 PR이 여러분들의 관심을 기다리고 있어요~`,
 	        attachments: attachments
 	 	});
