@@ -1,4 +1,13 @@
-
+export class PullRequest {
+  constructor(name, url, head, base, created_at, updated_at) {
+    this.name = name;
+    this.url = url;
+    this.head = head;
+    this.base = base;
+    this.created_at = created_at;
+    this.updated_at = updated_at;
+  }
+}
 
 const fetchAllPages = async (
 		  request,
