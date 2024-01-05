@@ -55,16 +55,16 @@ function time_ago(time) {
   return time;
 }
 
-class PullRequest {
-  constructor(name, url, head, base, created_at, updated_at) {
-    this.name = name;
-    this.url = url;
-    this.head = head;
-    this.base = base;
-    this.created_at = created_at;
-    this.updated_at = updated_at;
-  }
-}
+// class PullRequest {
+//   constructor(name, url, head, base, created_at, updated_at) {
+//     this.name = name;
+//     this.url = url;
+//     this.head = head;
+//     this.base = base;
+//     this.created_at = created_at;
+//     this.updated_at = updated_at;
+//   }
+// }
 
 var attachments = [];
 
