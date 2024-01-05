@@ -1,4 +1,12 @@
 
+export const NOTI_COLORS = {
+  "[D-0]": "#FF0000",
+  "[D-1]": "#FF0000",
+  "[D-2]": "#FFA500",
+  "[D-3]": "#FFA500",
+  "[D-4]": "#008000",
+  "[D-5]": "#008000",
+};
 
 export function time_ago(time) {
   var time_formats = [
@@ -18,6 +26,7 @@ export function time_ago(time) {
     [5806080000, "Last century", "Next century"], // 60*60*24*7*4*12*100*2
     [58060800000, "centuries", 2903040000], // 60*60*24*7*4*12*100*20, 60*60*24*7*4*12*100
   ];
+
   var seconds = (+new Date() - time) / 1000,
     token = "ago",
     list_choice = 1;
