@@ -2,7 +2,7 @@ import * as core from "@actions/core";
 import * as github from "@actions/github";
 import { initialize } from "./initialize.js";
 import { listOfPRs } from "./api.js";
-import { time_ago } from ./SlackMessage.js";
+import { time_ago } from "./SlackMessage.js";
 
 const NOTI_COLORS = {
   "[D-0]": "#FF0000",
