@@ -25,8 +25,18 @@ const fetchAllPages = async (
 		  return result;
 		};
 
-export const listOfPRs = await fetchAllPages(global.octokit.rest.pulls.list, {
+// export const getPRList = async () => {
+//   return fetchAllPages(global.octokit.rest.pulls.list, {
+//     owner: global.owner,
+//     repo: global.repo,
+//     state: "open",
+//   });
+// };
+
+export const listOfPRs = async () => {
+	return fetchAllPages(global.octokit.rest.pulls.list, {
     owner: global.owner,
     repo: global.repo,
     state: "open",
   });
+};
