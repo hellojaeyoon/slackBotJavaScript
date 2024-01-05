@@ -1,4 +1,4 @@
-export class PullRequest {
+class PullRequest {
   constructor(name, url, head, base, created_at, updated_at) {
     this.name = name;
     this.url = url;
