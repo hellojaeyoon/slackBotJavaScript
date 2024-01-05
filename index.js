@@ -73,12 +73,13 @@ var attachments = [];
 
 	try {
 		initialize();
-		console.log(`listOfPRs`);
-		console.log(listOfPRs);
+		const test = listOfPRs();
+		console.log(`test`);
+		console.log(test);
 		console.log(Date());
 
-		for (var i = 0; i < listOfPRs.length; i++) {
-		    const pr = listOfPRs[i];
+		for (var i = 0; i < test.length; i++) {
+		    const pr = test[i];
 		    const dueDate = pr.name.substr(0, 5);
 		    console.log(dueDate);
 		    const color = NOTI_COLORS[`${dueDate}`];
