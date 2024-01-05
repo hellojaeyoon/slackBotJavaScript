@@ -73,7 +73,7 @@ var attachments = [];
 
 	try {
 		initialize();
-		const test = listOfPRs();
+		const test = await listOfPRs();
 		console.log(`test`);
 		console.log(test);
 		console.log(Date());
