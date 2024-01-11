@@ -21,6 +21,9 @@ const fetchAllPages = async (
     const { data } = await request({ ...params, per_page: 100, page });
     for (var i = 0; i < data.length; i++) {
       var object = data[i];
+      console.log("object.labels");
+      console.log(object.labels);
+	    
       const pullRequest = new PullRequest(
         object.title,
         object.html_url,
@@ -36,8 +39,7 @@ const fetchAllPages = async (
 
     [page, len, count] = [page + 1, data.length, count + data.length];
   } while (len === 100 && count < maxCount);
-  console.log(`result`);
-  console.log(result);
+
   return result;
 };
 
