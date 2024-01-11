@@ -27,56 +27,19 @@ var attachments = [];
       // }
       
       const dueDate = pr.name.substr(0, 5);
-      console.log(dueDate);
-      const color = NOTI_COLORS[`${dueDate}`];
-      console.log(color);
       const headToBaseContext = `${pr.head}` + " -> " + `${pr.base}`;
       const timewhenCreate = time_ago(new Date(pr.created_at));
       const timewhenUpdate = time_ago(new Date(pr.updated_at));
-      console.log(timewhenCreate);
-      console.log(timewhenCreate);
       const timeContext =
         "(" + "created " + timewhenCreate + ", and " + "updated " + timewhenUpdate + ")";
       const slackMessage = {
         fallback: "요청에 실패했습니다",
-        color: color,
-        title: pr.name,
+        color: pr.noti_color,
+        title: pr.D_Day + pr.name,
         title_link: pr.url,
         text: headToBaseContext + "\n" + timeContext,
       };
       attachments.push(slackMessage);
-      const slackBlock = {
-        blocks: [
-          {
-            type: "section",
-            text: {
-              type: "mrkdwn",
-              text: "<@" + "C069ZBB35L4" + ">" + "여러분",
-            },
-          },
-          {
-            type: "section",
-            text: {
-              type: "mrkdwn",
-              text: "<@" + "U05DYM3MNSU" + ">" + "님",
-            },
-          },
-          {
-            type: "section",
-            text: {
-              type: "mrkdwn",
-              text: "<" + pr.url + "|" + pr.name + ">",
-            },
-          },
-          {
-            type: "section",
-            text: {
-              type: "mrkdwn",
-              text: headToBaseContext,
-            },
-          },
-        ],
-      };
       attachments.push(slackBlock);
     }
     const pr_title = core.getInput("pr_title");
