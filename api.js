@@ -21,9 +21,12 @@ const fetchAllPages = async (
     const { data } = await request({ ...params, per_page: 100, page });
     for (var i = 0; i < data.length; i++) {
       var object = data[i];
-      console.log("object.labels");
+      const labels = object.labels;
       console.log(object.labels);
-	    
+      for (var j = 0; j < labels.length; j++) {
+	const label = labels[j];
+	// if label.name
+      }
       const pullRequest = new PullRequest(
         object.title,
         object.html_url,
