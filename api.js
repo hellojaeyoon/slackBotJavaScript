@@ -1,11 +1,15 @@
+import { NOTI_COLORS } from "./SlackMessage.js";
+
 class PullRequest {
-  constructor(name, url, head, base, created_at, updated_at) {
+  constructor(name, url, head, base, created_at, updated_at, D_Day, noti_color) {
     this.name = name;
     this.url = url;
     this.head = head;
     this.base = base;
     this.created_at = created_at;
     this.updated_at = updated_at;
+    this.D_Day = D_Day;
+    this.noti_color = noti_color;
   }
 }
 
@@ -23,9 +27,14 @@ const fetchAllPages = async (
       var object = data[i];
       const labels = object.labels;
       console.log(object.labels);
+	var D_Day = "D_100";
+	    var noti_color = "000000";
       for (var j = 0; j < labels.length; j++) {
 	const label = labels[j];
-	// if label.name
+	if label.name in NOTI_COLORS {
+		D_Day = "[" + label.name + "]";
+		noti_color = NOTI_COLORS[label.name];
+	}
       }
       const pullRequest = new PullRequest(
         object.title,
@@ -33,7 +42,9 @@ const fetchAllPages = async (
         object.head.ref,
         object.base.ref,
         object.created_at,
-        object.updated_at
+        object.updated_at,
+	    D_Day,
+	      noti_color
       );
       result.push(pullRequest);
     }
