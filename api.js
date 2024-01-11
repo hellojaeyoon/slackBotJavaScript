@@ -31,7 +31,7 @@ const fetchAllPages = async (
 	    var noti_color = "000000";
       for (var j = 0; j < labels.length; j++) {
 	const label = labels[j];
-	if label.name in NOTI_COLORS {
+	if (label.name in NOTI_COLORS) {
 		D_Day = "[" + label.name + "]";
 		noti_color = NOTI_COLORS[label.name];
 	}
