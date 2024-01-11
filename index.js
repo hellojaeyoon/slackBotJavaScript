@@ -17,6 +17,12 @@ var attachments = [];
 
     for (var i = 0; i < test.length; i++) {
       const pr = test[i];
+      const labels = pr.labels;
+      console.log("labels");
+      for (var j = 0; j < labels.length; i++) {
+        console.log(labels[j]);
+      }
+      
       const dueDate = pr.name.substr(0, 5);
       console.log(dueDate);
       const color = NOTI_COLORS[`${dueDate}`];
